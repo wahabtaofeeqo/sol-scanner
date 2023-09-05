@@ -20,4 +20,8 @@ interface BookingDao {
 
     @Delete
     fun delete(model: Booking)
+
+    @Query("DELETE FROM bookings")
+    fun deleteAll()
+
 }

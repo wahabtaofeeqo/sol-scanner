@@ -106,6 +106,7 @@ class MainViewModel(app: Application): AndroidViewModel(app) {
         this._bookings.value = response
         val body = response.data!!
        thread(start = true) {
+           bookingDao.deleteAll()
            bookingDao.insertAll(body)
        }
     }
